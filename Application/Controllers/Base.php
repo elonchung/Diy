@@ -8,7 +8,7 @@
 namespace Diy\Application\Controllers;
 
 Class Base {
-	
+
 	public $smarty;
 
     public function __construct()
@@ -35,8 +35,8 @@ Class Base {
         //创建Smarty的一个实例化对象
         $this->smarty = new \Smarty();
         //对smarty做一些基本设置
+
         //设置模板的存放位置
-        $this->smarty->debugging = true;
         $this->smarty->setTemplateDir(APP_DIR.'/Views/');
         //smarty编译文件的存储位置
         $this->smarty->setCompileDir(ROOT_DIR.'/compiled/');

@@ -8,8 +8,9 @@
 namespace Diy\Application\Controllers;
 
 use Diy\Application\Controllers\Base;
+use Diy\Application\Models\User;
 
-class Helloworld  extends Base1
+class Helloworld  extends Base
 {
     
     function index(){
@@ -19,8 +20,11 @@ class Helloworld  extends Base1
     }
 
     function test(){
-    	
-        $this->smarty->assign('data','helloworld');
+
+        $user = new User();
+        $data = $user->getUserInfo(100);
+
+        $this->smarty->assign('data',$data);
         $this->smarty->display('text.html');
 
     	

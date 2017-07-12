@@ -5,6 +5,12 @@
     <title>test</title>
 </head>
 <body>
- {$data33}
+<ul>
+    {foreach $data as $v}
+    <li>{$v['id']}</li>
+    <li>{$v['name']}</li>
+    {/foreach}
+</ul>
+
 </body>
 </html>

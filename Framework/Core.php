@@ -1,7 +1,7 @@
 <?php
 
 /** 
- * Nova/Framework/Core.php
+ * Diy/Framework/Core.php
  */
 namespace Diy\Framework;
 
