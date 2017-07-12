@@ -14,7 +14,7 @@ class User extends Model
 {
     protected $db;
 
-    protected $table = 't_test';
+    protected $table = 'student';
 
     /**
      * 根据用户id查询用户信息并返回查询结果

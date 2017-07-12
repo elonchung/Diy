@@ -6,7 +6,7 @@ return $cfg =
             'dsn' =>  'mysql:host=localhost;dbname=test',
             'username' => 'root',
             'password' => '123456',
-            'charset' => 'utf-8'
+            'charset' => 'utf8'
         ],
 
     ];

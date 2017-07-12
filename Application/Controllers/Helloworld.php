@@ -22,8 +22,8 @@ class Helloworld  extends Base
     function test(){
 
         $user = new User();
-        $data = $user->getUserInfo(100);
-
+        $data = $user->getUserInfo(2);
+        var_dump($data);
         $this->smarty->assign('data',$data);
         $this->smarty->display('text.html');
 

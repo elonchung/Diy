@@ -24,7 +24,7 @@ class Model
         //使用PDO创建mysql数据库连接
         $this->db = DB::getInstance();
         $this->db->table = $this->table;
-        var_dump($this);
+
     }
 
 }

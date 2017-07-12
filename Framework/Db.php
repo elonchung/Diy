@@ -22,6 +22,7 @@ class DB
 
     private final function __construct()//私有的不可被继承的 构造方法
     {
+        echo 123;
         $cfg = require CONFIG_DIR.'/config.php';
 
         $dsn['dsn'] = $cfg['db']['dsn'];
