@@ -44,6 +44,7 @@ class Autoloader
     public function import($className)
     {
         $path = explode('\\', substr($className, strlen('Diy')));
+
         $filePath = ROOT_DIR . DIRECTORY_SEPARATOR . implode(DIRECTORY_SEPARATOR, $path) . '.php';
         if (is_file($filePath)) {
             require $filePath;

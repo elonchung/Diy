@@ -1,6 +1,6 @@
 <?php
 /**
- * helloworld
+ * HelloworldController
  * @authors simon.zhong (simon1740@163.com)
  * @date    2017-07-12
  * @version 1.0
@@ -10,7 +10,7 @@ namespace Diy\Application\Controllers;
 use Diy\Application\Controllers\Base;
 use Diy\Application\Models\User;
 
-class Helloworld  extends Base
+class HelloworldController  extends Base
 {
     
     function index(){
@@ -23,7 +23,7 @@ class Helloworld  extends Base
 
         $user = new User();
         $data = $user->getUserInfo(2);
-        var_dump($data);
+        
         $this->smarty->assign('data',$data);
         $this->smarty->display('text.html');
 

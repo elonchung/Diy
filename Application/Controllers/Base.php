@@ -18,7 +18,7 @@ Class Base {
 		// //$smarty->right_delimiter = "#}";
 		// $smarty->setTemplateDir(SITE_ROOT . '/views/'); //设置模板目录
 		// $smarty->setCompileDir(SITE_ROOT . '/data/cache/templates_c/');
-		// $smarty->setConfigDir(SITE_ROOT . '/views/smarty_configs/');
+		// $smarty->setConfigDir(SITE_ROOT . '/views/smarty_confi`gs/');
 		// $smarty->setCacheDir(SITE_ROOT . '/data/cache/smarty_cache/');
 		// //$smarty->force_compile = true;
 		// if (APP_DEBUG) {

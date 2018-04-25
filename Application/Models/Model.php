@@ -11,13 +11,11 @@ namespace Diy\Application\Models;
 use Diy\Framework\DB;
 
 
-class Model
+abstract class Model
 {
     protected $db;
 
     protected $table;
-
-    protected static $_instance;
 
     public function __construct()
     {

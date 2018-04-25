@@ -1,5 +1,20 @@
 {
+	"name": "simon/DIY",
+	"description": "The DIY Framework.",
+	"keywords": ["framework", "diy"],
 	"require": {
-    	"smarty/smarty": "~3.1"
-	}	
+		"php":">5.3.0",
+    	"smarty/smarty": "~3.1",
+		"filp/whoops":"*",
+		"symfony/var-dumper":"*",
+		"catfan/medoo":"*",
+		"twig/twig":"*",
+		"monolog/monolog":"*"
+	},
+	"repositories": {
+		"packagist": {
+			"type": "composer",
+			"url": "https://packagist.phpcomposer.com"
+		}
+	}
 }

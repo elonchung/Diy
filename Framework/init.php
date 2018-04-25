@@ -6,10 +6,12 @@ namespace Diy\Framework;
 
 //引入配置文件
 require CONFIG_DIR . '/config.php';
+
+//引入扩展库自动加载类
+require ROOT_DIR.'/vendor/autoload.php';
+
 //引入自动加载类
 require 'Autoloader.php';
-
-require ROOT_DIR.'/vendor/autoload.php';
 
 //初始化自动加载
 Autoloader::init();

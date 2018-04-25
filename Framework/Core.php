@@ -21,6 +21,11 @@ class Core
         if (DEBUG_MODE === true) {
             error_reporting(E_ALL);
             ini_set('display_errors', 'On');
+
+            //打开美观的Whoops错误报告
+            $whoops = new \Whoops\Run;
+            $whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler);
+            $whoops->register();
         } else {
             error_reporting(E_ALL);
             ini_set('display_errors', 'Off');
@@ -37,7 +42,20 @@ class Core
      */
     public function route()
     {
-        //如果$_REQUEST中没有'act'，则设定默认act为index
+        $controller = 'index';
+        $action = 'index';
+        $file = $_SERVER['REQUEST_URI'];
+//        var_dump($file);exit;
+        if ($file && $file !=='/'){
+            $fileArr = explode('/',trim($file,'/'));
+
+            if($fileArr){
+                $controller = $fileArr[0] ;
+                $action = $fileArr[1] ;
+            }
+        }
+
+/*        //如果$_REQUEST中没有'act'，则设定默认act为index
         if (!isset($_REQUEST['act'])) {
             $_REQUEST['act'] = 'index';
         }
@@ -51,19 +69,26 @@ class Core
         
         //判断控制器类是否存在，不存在则报404
         if (!class_exists($className)) {
-            header('HTTP/1.1 404 Not Found');
-            die($className);
+            throw new \Exception('找不到控制器',404);
         }
-            
+        */
+
+        //根据act定位控制器类
+        $className = 'Diy\\Application\\Controllers\\' . $controller.'Controller';
+
+        //判断控制器类是否存在，不存在则报404
+        if (!class_exists($className)) {
+            throw new \Exception('找不到控制器',404);
+        }
+
         //生成目标控制器类对象
         $obj = new $className();
         
         //判断方法是否存在，不存在则报404
-        if (!method_exists($obj, $_REQUEST['st'])) {
-            header('HTTP/1.1 404 Not Found');
-            exit;
+        if (!method_exists($obj, $action)) {
+            throw new \Exception('找不到控制器的对应方法',404);
         }
         //执行目标方法
-        $obj->$_REQUEST['st']();
+        $obj->$action();
     }
 }

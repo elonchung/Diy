@@ -12,7 +12,6 @@ use Diy\Framework\DB;
 
 class User extends Model
 {
-    protected $db;
 
     protected $table = 'student';
 
